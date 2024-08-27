@@ -1,0 +1,10 @@
+body {
+    background-color: beige;
+}
+
+form, form table {
+    background-color: beige;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
