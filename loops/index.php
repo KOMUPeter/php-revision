@@ -1,3 +1,10 @@
+<?php
+require_once 'abstractUser.php';  // Include the abstract class first
+require_once 'myTraitFunctions.php';  // Include the trait file
+require_once 'user.php';  // Finally, include the class that uses the trait
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +25,34 @@
     echo("<hr>");
     $count = 0;
     for ($i = 0; $i < 10; $i++) { 
-    $count = $i + $count;  
-    echo " $i: $count<br>";  
+        $count = $i + $count;  
+        echo " $i: $count<br>";  
     }
+    ?>
+
+    <h2>Classes, Interface, and Trait</h2>
+    <p><strong>Company Name:</strong> 
+    <?php
+    // Create an instance of the User class
+    $user = new User();
+    
+    // Set the company name using the setter method
+    $user->setCompany("Tech Innovations Inc.");
+
+    // Display the company name using the getter method from AbstractUser
+    echo $user->getCompany();
+    ?>
+    </p>
+
+    <h3>Display List of Users</h3>
+    <?php
+    // Set names for the user object
+    $user->setNames(["Alice", "Bob", "Charlie"]);
+    
+    // Display the users using the method from the trait
+    $user->displayUsers();
     ?>
 </body>
 </html>
+
+
