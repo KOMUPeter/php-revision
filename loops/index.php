@@ -1,7 +1,9 @@
 <?php
 require_once 'abstractUser.php';  // Include the abstract class first
+require_once 'interfaceUser.php';  // Finally, include the class that uses the trait
 require_once 'myTraitFunctions.php';  // Include the trait file
 require_once 'user.php';  // Finally, include the class that uses the trait
+
 
 ?>
 
@@ -29,8 +31,9 @@ require_once 'user.php';  // Finally, include the class that uses the trait
         echo " $i: $count<br>";  
     }
     ?>
-
+    <hr>
     <h2>Classes, Interface, and Trait</h2>
+    <hr>
     <p><strong>Company Name:</strong> 
     <?php
     // Create an instance of the User class
@@ -47,7 +50,7 @@ require_once 'user.php';  // Finally, include the class that uses the trait
     <h3>Display List of Users</h3>
     <?php
     // Set names for the user object
-    $user->setNames(["Alice", "Bob", "Charlie"]);
+    $user->setNames(["Alice M.", "Bob K.", "Charlie S."]);
     
     // Display the users using the method from the trait
     $user->displayUsers();

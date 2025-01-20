@@ -1,6 +1,6 @@
 <?php
 
-class User extends AbstractUser {
+class User extends AbstractUser implements interfaceUser {
 
     use MyTraitFunctions;
     private array $names = array();
@@ -25,4 +25,6 @@ class User extends AbstractUser {
 
         return $this;
     }
+
+    public function createUser(){}
 }
