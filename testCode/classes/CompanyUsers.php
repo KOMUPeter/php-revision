@@ -72,6 +72,7 @@ abstract Class  CompanyUsers implements Userinterface   {
         return $this;
     }
 
+    // function implemented in the interface
     function changeUserLunk(){
         
     }

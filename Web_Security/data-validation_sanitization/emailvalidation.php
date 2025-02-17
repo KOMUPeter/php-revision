@@ -2,7 +2,7 @@
 
 // SANITIZATION AND VALIDATION OF EMAIL
 // $email = "peter@example.com";
-$email = $_POST["username"] ?? ""; // Use null coalescing operator to avoid warnings
+$email = $_POST["email"] ?? ""; // Use null coalescing operator to avoid warnings
 
 // Step 1: Sanitize the email
 $sanitizeEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -34,6 +34,18 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 } else {
     echo "Invalid email address.";
 }
+
+
+// simplifing the two codes above in one if
+$email = $_POST["email"] ?? ""; 
+
+// Sanitize and validate the email, then check domain existence
+if (filter_var($email, FILTER_SANITIZE_EMAIL) && filter_var($email, FILTER_VALIDATE_EMAIL) && (checkdnsrr(substr(strrchr($email, "@"), 1), "MX") || checkdnsrr(substr(strrchr($email, "@"), 1), "A"))) {
+    echo "Email is sanitized, valid, and the domain exists.";
+} else {
+    echo "Invalid email or domain.";
+}
+
 
 
 
