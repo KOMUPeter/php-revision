@@ -11,4 +11,4 @@ echo $date2->format('d \o\f M Y') . '<hr>';  // Outputs: 17 of May 2015
 $dateDifference = $date1->diff($date2);
 
 // Output the difference
-echo "Difference in years between father and son: " . $dateDifference->y . " years, " . $dateDifference->m . " months, " . $dateDifference->d . " days.";
+echo "Difference in years between father and son: " . $dateDifference->y . " years, " . $dateDifference->m . " months, " . $dateDifference->d . " days."; 
